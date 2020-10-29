@@ -7,19 +7,13 @@ export const GifGrid = ({ category }) => {
 
   const {data: images, loading} = useFetchGifs(category);
 
-  // useEffect(() => {
-  //   getGifs(category)
-  //     .then(imgs => setImages(imgs))
-  //     .catch((err) => console.warn(err));;
-  // }, [ category ]);
-
   return (
     <>
       <h3>{ category }</h3>
 
       { loading && <p>Cargando...</p>}
 
-      <div className="gif-grid">
+      <div className="gif-grid animate__animated animate__fadeIn">
         {
           images.map( img => (
             <GifGridItem
